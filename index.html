@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blacksheep | Tejidos Artesanales y Amigurumis en Argentina</title>
+    <meta name="description" content="Piezas únicas tejidas a mano en Córdoba, Argentina. Amigurumis personalizados, indumentaria de diseño y decoración cálida para tu hogar. Envíos a todo el país.">
+    <meta name="keywords" content="tejidos artesanales, amigurumis, ropa tejida, caminos de cama, decoración hogar, Córdoba, Argentina, hecho a mano">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --dorado: #d4af37;
+            --negro: #1a1a1a;
+            --crema: #faf9f6;
+            --blanco: #ffffff;
+            --whatsapp: #25D366;
+            --gris-texto: #555555;
+        }
+
+        body { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0; padding: 0; 
+            background-color: var(--crema); 
+            color: var(--negro); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 15px 5%; background: rgba(255, 255, 255, 0.98); 
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+            position: fixed; width: 90%; top: 0; z-index: 1000;
+        }
+        .logo { font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .logo span { color: var(--dorado); }
+        
+        nav a { margin: 0 15px; text-decoration: none; color: var(--gris-texto); font-weight: 600; transition: 0.3s; }
+        nav a:hover { color: var(--dorado); }
+
+        /* --- HERO SECTION --- */
+        .hero { 
+            padding: 180px 20px 100px; 
+            /* Fondo temporal gris claro si no tienes una imagen de fondo aún */
+            background-color: #e9e6df;
+            text-align: center; 
+        }
+        .hero h1 { font-size: 3.8em; margin: 0; color: var(--negro); line-height: 1.1; }
+        .hero p { font-size: 1.3em; max-width: 650px; margin: 25px auto 40px; color: var(--gris-texto); }
+        .btn-wa-catalog {
+            display: inline-flex; align-items: center; gap: 10px; padding: 15px 40px; 
+            background: var(--whatsapp); color: var(--blanco);
+            text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .btn-wa-catalog:hover { background: #128C7E; transform: translateY(-3px); }
+
+        /* --- BANNERS INFORMATIVOS --- */
+        .info-bar {
+            background: var(--dorado); color: var(--negro);
+            display: flex; justify-content: space-around; padding: 15px 5%;
+            flex-wrap: wrap; text-align: center; font-weight: bold; letter-spacing: 0.5px;
+        }
+        .info-item { margin: 10px; }
+        .info-item i { margin-right: 8px; }
+
+        /* --- SECCIÓN CATÁLOGO WHATSAPP --- */
+        .catalog-section {
+            padding: 80px 5%; max-width: 900px; margin: 0 auto; text-align: center;
+        }
+        .catalog-section h2 { font-size: 2.5em; color: var(--negro); margin-bottom: 20px; }
+        .catalog-section p { font-size: 1.1em; color: var(--gris-texto); margin-bottom: 40px; }
+        
+        .whatsapp-store-card {
+            background: var(--blanco); border-radius: 15px; padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--whatsapp);
+        }
+        .whatsapp-store-card i { font-size: 3em; color: var(--whatsapp); margin-bottom: 20px; }
+
+        /* --- BOTÓN WHATSAPP FLOTANTE --- */
+        .wa-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: var(--whatsapp); color: white;
+            width: 60px; height: 60px; border-radius: 50px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 1001; transition: 0.3s;
+        }
+        .wa-float:hover { transform: scale(1.1); background-color: #128C7E; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--negro); color: #aaa; padding: 60px 5% 30px; text-align: center; }
+        .social-links a { color: var(--dorado); font-size: 24px; margin: 0 15px; transition: 0.3s; }
+        .social-links a:hover { color: var(--blanco); }
+
+        /* --- ANIMACIONES SCROLL --- */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s all ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            header { position: relative; width: 100%; padding: 20px 0; flex-direction: column; gap: 10px;}
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/5493876457769" class="wa-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <div class="logo">Black<span>sheep</span></div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#tienda">Nuestra Tienda</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1 class="reveal">El Arte de Tejer Emociones</h1>
+        <p class="reveal">Huyamos de lo industrial. Creamos amigurumis, indumentaria y decoración tejida a mano con dedicación y punto por punto.</p>
+        <a href="https://wa.me/c/5493876457769" class="btn-wa-catalog reveal" target="_blank">
+            <i class="fas fa-store"></i> Ver Catálogo Completo
+        </a>
+    </section>
+
+    <div class="info-bar reveal">
+        <div class="info-item"><i class="fas fa-box-open"></i> Envíos a toda Argentina</div>
+        <div class="info-item"><i class="fas fa-handshake"></i> Compra segura por Mercado Libre</div>
+        <div class="info-item"><i class="fas fa-magic"></i> 100% Artesanal</div>
+    </div>
+
+    <section class="catalog-section reveal" id="tienda">
+        <h2>Descubre Nuestras Creaciones</h2>
+        <p>Actualmente estamos renovando nuestro stock. Toda nuestra colección actualizada, con precios y detalles, la encontrarás siempre disponible en nuestra tienda oficial de WhatsApp.</p>
+        
+        <div class="whatsapp-store-card">
+            <i class="fab fa-whatsapp"></i>
+            <h3>Tienda en WhatsApp Business</h3>
+            <p style="margin-bottom: 30px;">Explora nuestras categorías: Amigurumis, Ropa de Diseño y Deco Hogar directamente desde tu celular.</p>
+            <a href="https://wa.me/c/5493876457769" class="btn-wa-catalog" target="_blank">
+                Ir a la Tienda de WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/blacksheep_tejido_artesanal" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5493876457769" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p style="margin-top: 25px;">&copy; 2026 Blacksheep Tejido Artesanal <br> Hecho con pasión en Villa Parque Santa Ana, Córdoba.</p>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
