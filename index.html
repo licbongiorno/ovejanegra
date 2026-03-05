@@ -3,158 +3,511 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blacksheep | Tejidos Artesanales y Amigurumis en Argentina</title>
-    <meta name="description" content="Piezas únicas tejidas a mano en Córdoba, Argentina. Amigurumis personalizados, indumentaria de diseño y decoración cálida para tu hogar. Envíos a todo el país.">
-    <meta name="keywords" content="tejidos artesanales, amigurumis, ropa tejida, caminos de cama, decoración hogar, Córdoba, Argentina, hecho a mano">
+    <title>Blacksheep | Tejido Artesanal Premium</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="logo1.png" type="image/png">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --dorado: #d4af37;
-            --negro: #1a1a1a;
-            --crema: #faf9f6;
-            --blanco: #ffffff;
+            --dorado: #c5a059;
+            --crema-claro: #fcfbf9;
+            --crema-oscuro: #f3efe6;
+            --texto-principal: #2c2a25;
+            --texto-secundario: #66635c;
+            --sombra-elegante: rgba(44, 42, 37, 0.08);
             --whatsapp: #25D366;
-            --gris-texto: #555555;
+            --rojo-pasion: #e63946;
         }
 
-        body { 
-            font-family: 'Helvetica Neue', Arial, sans-serif; 
-            margin: 0; padding: 0; 
-            background-color: var(--crema); 
-            color: var(--negro); 
-            line-height: 1.6;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--crema-claro);
+            color: var(--texto-principal);
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
             overflow-x: hidden;
         }
 
-        /* --- NAVEGACIÓN --- */
-        header { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 15px 5%; background: rgba(255, 255, 255, 0.98); 
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
-            position: fixed; width: 90%; top: 0; z-index: 1000;
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* --- HEADER & NAVEGACIÓN --- */
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(252, 251, 249, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            z-index: 1000;
         }
-        .logo { font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
-        .logo span { color: var(--dorado); }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .brand-name span { color: var(--dorado); font-style: italic; }
+
+        .nav-social {
+            font-size: 1.5rem;
+            color: var(--texto-principal);
+            transition: color 0.3s;
+        }
+        .nav-social:hover { color: var(--dorado); }
+
+        /* --- HERO CON VIDEO ANIMADO --- */
+        .hero {
+            padding: 140px 5% 80px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 450px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px var(--sombra-elegante);
+            border: 2px solid rgba(197, 160, 89, 0.2); 
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: var(--texto-principal);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--texto-secundario);
+            max-width: 650px;
+            margin: 0 auto 35px;
+            line-height: 1.7;
+        }
+
+        /* --- BOTONES HERO --- */
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-catalog {
+            background-color: var(--texto-principal);
+            color: var(--crema-claro);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-catalog:hover {
+            background-color: var(--dorado);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(197, 160, 89, 0.3);
+        }
+
+        .btn-chat {
+            background-color: transparent;
+            color: var(--texto-principal);
+            border: 2px solid var(--texto-principal);
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-chat:hover {
+            background-color: var(--crema-oscuro);
+            border-color: var(--dorado);
+            color: var(--dorado);
+        }
+
+        /* --- AVISO DE STOCK --- */
+        .urgency-badge {
+            background: var(--crema-oscuro);
+            border-left: 4px solid var(--dorado);
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin: 40px auto 0;
+            max-width: 550px;
+            font-size: 0.95rem;
+            color: var(--texto-secundario);
+            box-shadow: 0 5px 15px var(--sombra-elegante);
+        }
+
+        /* --- COLECCIÓN --- */
+        .collection-section {
+            padding: 80px 5%;
+            position: relative;
+        }
+
+        .yarn-bg {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-image: linear-gradient(to right, transparent 50%, var(--dorado) 50%);
+            background-size: 20px 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .cards-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- MARCOS ANIMADOS DE LA COLECCIÓN --- */
+        .producto-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.4s ease;
+            width: 320px;
+        }
+
+        .producto-container:hover {
+            transform: translateY(-12px);
+        }
+
+        .marco-animado {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 15px 35px var(--sombra-elegante);
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        .marco-animado::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(
+                var(--crema-claro) 0deg, 
+                var(--crema-claro) 90deg, 
+                var(--dorado) 180deg, 
+                var(--crema-claro) 270deg, 
+                var(--crema-claro) 360deg
+            );
+            animation: rotar 4s linear infinite;
+        }
+
+        .marco-animado::after {
+            content: '';
+            position: absolute;
+            inset: 5px; /* Grosor del borde brillante */
+            background: var(--crema-claro);
+            border-radius: 16px;
+        }
+
+        .marco-animado img {
+            position: relative;
+            z-index: 1;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.4s ease;
+        }
+
+        .marco-animado:hover img {
+            transform: scale(1.05);
+        }
+
+        @keyframes rotar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .producto-info {
+            text-align: center;
+            background: var(--crema-claro);
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.03);
+            border-bottom: 5px solid var(--crema-oscuro);
+        }
+
+        .producto-info h3 { 
+            font-size: 1.6rem; 
+            margin-bottom: 10px; 
+            color: var(--texto-principal);
+        }
         
-        nav a { margin: 0 15px; text-decoration: none; color: var(--gris-texto); font-weight: 600; transition: 0.3s; }
-        nav a:hover { color: var(--dorado); }
+        .producto-info p { 
+            color: var(--texto-secundario); 
+            font-style: italic; 
+            font-size: 1rem; 
+        }
 
-        /* --- HERO SECTION --- */
-        .hero { 
-            padding: 180px 20px 100px; 
-            /* Fondo temporal gris claro si no tienes una imagen de fondo aún */
-            background-color: #e9e6df;
-            text-align: center; 
+        /* --- CONFIANZA Y LOGÍSTICA --- */
+        .trust-section {
+            background: white;
+            padding: 60px 5%;
+            margin: 60px 5%;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px var(--sombra-elegante);
         }
-        .hero h1 { font-size: 3.8em; margin: 0; color: var(--negro); line-height: 1.1; }
-        .hero p { font-size: 1.3em; max-width: 650px; margin: 25px auto 40px; color: var(--gris-texto); }
-        .btn-wa-catalog {
-            display: inline-flex; align-items: center; gap: 10px; padding: 15px 40px; 
-            background: var(--whatsapp); color: var(--blanco);
-            text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1em;
-            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-        .btn-wa-catalog:hover { background: #128C7E; transform: translateY(-3px); }
 
-        /* --- BANNERS INFORMATIVOS --- */
-        .info-bar {
-            background: var(--dorado); color: var(--negro);
-            display: flex; justify-content: space-around; padding: 15px 5%;
-            flex-wrap: wrap; text-align: center; font-weight: bold; letter-spacing: 0.5px;
-        }
-        .info-item { margin: 10px; }
-        .info-item i { margin-right: 8px; }
+        .trust-title { font-size: 2rem; margin-bottom: 20px; }
+        .trust-subtitle { color: var(--texto-secundario); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; }
 
-        /* --- SECCIÓN CATÁLOGO WHATSAPP --- */
-        .catalog-section {
-            padding: 80px 5%; max-width: 900px; margin: 0 auto; text-align: center;
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
         }
-        .catalog-section h2 { font-size: 2.5em; color: var(--negro); margin-bottom: 20px; }
-        .catalog-section p { font-size: 1.1em; color: var(--gris-texto); margin-bottom: 40px; }
+
+        .trust-logos img { height: 60px; object-fit: contain; }
+
+        .trust-feature { text-align: center; }
         
-        .whatsapp-store-card {
-            background: var(--blanco); border-radius: 15px; padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--whatsapp);
+        .trust-feature .fa-heart {
+            font-size: 2.2rem; 
+            margin-bottom: 10px; 
+            color: var(--rojo-pasion); 
+            filter: drop-shadow(0 4px 6px rgba(230, 57, 70, 0.3));
         }
-        .whatsapp-store-card i { font-size: 3em; color: var(--whatsapp); margin-bottom: 20px; }
+        
+        .trust-feature .fa-lock {
+            font-size: 2.2rem; 
+            margin-bottom: 10px; 
+            color: var(--dorado);
+        }
+
+        /* --- FOOTER & REDES --- */
+        footer {
+            background-color: var(--texto-principal);
+            color: var(--crema-oscuro);
+            text-align: center;
+            padding: 60px 5% 40px;
+        }
+
+        .social-footer {
+            margin-bottom: 30px;
+        }
+
+        .social-footer a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dorado);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 12px 25px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .social-footer a:hover {
+            background-color: var(--dorado);
+            color: var(--texto-principal);
+        }
+
+        .footer-text { font-size: 0.95rem; opacity: 0.8; }
 
         /* --- BOTÓN WHATSAPP FLOTANTE --- */
         .wa-float {
-            position: fixed; bottom: 30px; right: 30px;
-            background-color: var(--whatsapp); color: white;
-            width: 60px; height: 60px; border-radius: 50px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
-            z-index: 1001; transition: 0.3s;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            z-index: 2000;
+            text-decoration: none;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .wa-float:hover { transform: scale(1.1); background-color: #128C7E; }
 
-        /* --- FOOTER --- */
-        footer { background: var(--negro); color: #aaa; padding: 60px 5% 30px; text-align: center; }
-        .social-links a { color: var(--dorado); font-size: 24px; margin: 0 15px; transition: 0.3s; }
-        .social-links a:hover { color: var(--blanco); }
+        .wa-float:hover { transform: scale(1.15) rotate(-5deg); }
 
-        /* --- ANIMACIONES SCROLL --- */
-        .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s all ease-out; }
+        /* Animaciones Fade-in */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5em; }
-            header { position: relative; width: 100%; padding: 20px 0; flex-direction: column; gap: 10px;}
+            .hero h1 { font-size: 2.3rem; }
+            .video-container { max-width: 90%; }
+            .btn-container { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+            .btn-catalog, .btn-chat { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/5493876457769" class="wa-float" target="_blank" aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <header>
-        <div class="logo">Black<span>sheep</span></div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#tienda">Nuestra Tienda</a>
-        </nav>
+        <div class="brand-container">
+            <img src="logo1.png" alt="Blacksheep Logo" class="nav-logo">
+            <div class="brand-name">Black<span>sheep</span></div>
+        </div>
+        <a href="https://www.instagram.com/blacksheep_tejido_artesanal" target="_blank" class="nav-social" title="Síguenos en Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
     </header>
 
-    <section class="hero" id="inicio">
-        <h1 class="reveal">El Arte de Tejer Emociones</h1>
-        <p class="reveal">Huyamos de lo industrial. Creamos amigurumis, indumentaria y decoración tejida a mano con dedicación y punto por punto.</p>
-        <a href="https://wa.me/c/5493876457769" class="btn-wa-catalog reveal" target="_blank">
-            <i class="fas fa-store"></i> Ver Catálogo Completo
-        </a>
+    <section class="hero">
+        <div class="video-container reveal active">
+            <video src="logo.mp4" autoplay loop muted playsinline poster="logo1.png"></video>
+        </div>
+        
+        <h1 class="reveal">Piezas Únicas,<br>Tejidas a Mano con el Alma.</h1>
+        <p class="reveal">Huyamos de lo industrial. Cada punto cuenta una historia. Amigurumis de apego, prendas que abrazan y decoración que convierte tu casa en un hogar.</p>
+        
+        <div class="btn-container reveal">
+            <a href="https://wa.me/c/5493876457769" class="btn-catalog" target="_blank">
+                <i class="fas fa-store"></i> Ver Catálogo
+            </a>
+            <a href="https://wa.me/5493876457769" class="btn-chat" target="_blank">
+                <i class="fab fa-whatsapp"></i> Hablar con el taller
+            </a>
+        </div>
+
+        <div class="urgency-badge reveal">
+            <strong>✨ Descubre nuestra colección completa</strong><br>
+            Cada pieza está terminada y lista para encontrar su hogar. Explora nuestro catálogo y elige tu diseño favorito hoy mismo.
+        </div>
     </section>
 
-    <div class="info-bar reveal">
-        <div class="info-item"><i class="fas fa-box-open"></i> Envíos a toda Argentina</div>
-        <div class="info-item"><i class="fas fa-handshake"></i> Compra segura por Mercado Libre</div>
-        <div class="info-item"><i class="fas fa-magic"></i> 100% Artesanal</div>
-    </div>
-
-    <section class="catalog-section reveal" id="tienda">
-        <h2>Descubre Nuestras Creaciones</h2>
-        <p>Actualmente estamos renovando nuestro stock. Toda nuestra colección actualizada, con precios y detalles, la encontrarás siempre disponible en nuestra tienda oficial de WhatsApp.</p>
+    <section class="collection-section">
+        <div class="yarn-bg"></div>
         
-        <div class="whatsapp-store-card">
-            <i class="fab fa-whatsapp"></i>
-            <h3>Tienda en WhatsApp Business</h3>
-            <p style="margin-bottom: 30px;">Explora nuestras categorías: Amigurumis, Ropa de Diseño y Deco Hogar directamente desde tu celular.</p>
-            <a href="https://wa.me/c/5493876457769" class="btn-wa-catalog" target="_blank">
-                Ir a la Tienda de WhatsApp
-            </a>
+        <div class="cards-grid">
+            <div class="producto-container reveal">
+                <div class="marco-animado">
+                    <img src="ropatejida.jpg" alt="Indumentaria Artesanal">
+                </div>
+                <div class="producto-info">
+                    <h3>Indumentaria</h3>
+                    <p>Diseño exclusivo que abraza tu piel.</p>
+                </div>
+            </div>
+            
+            <div class="producto-container reveal">
+                <div class="marco-animado">
+                    <img src="amigurmi.jpg" alt="Amigurumis">
+                </div>
+                <div class="producto-info">
+                    <h3>Amigurumis</h3>
+                    <p>Compañeros fieles para toda la vida.</p>
+                </div>
+            </div>
+            
+            <div class="producto-container reveal">
+                <div class="marco-animado">
+                    <img src="ropacama1.jpg" alt="Decoración de Hogar">
+                </div>
+                <div class="producto-info">
+                    <h3>Deco Hogar</h3>
+                    <p>Calidez que transforma tus espacios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-section reveal">
+        <h2 class="trust-title">Del Taller en Salta a Tus Manos</h2>
+        <p class="trust-subtitle">Preparamos cada paquete con el mismo amor con el que tejemos. Envíos seguros y garantizados a cualquier rincón del país, para que la magia del norte llegue directo a tu puerta.</p>
+        
+        <div class="trust-logos">
+            <img src="mercadoenvio.webp" alt="Mercado Envíos">
+            
+            <div class="trust-feature">
+                <i class="fas fa-lock"></i><br>
+                <span style="font-size: 0.95rem; font-weight: bold; color: var(--texto-principal);">Pago Seguro</span>
+            </div>
+            
+            <div class="trust-feature">
+                <i class="fas fa-heart"></i><br> <span style="font-size: 0.95rem; font-weight: bold; color: var(--texto-principal);">Hecho con Amor</span>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="social-links">
-            <a href="https://www.instagram.com/blacksheep_tejido_artesanal" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/5493876457769" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <div class="social-footer reveal">
+            <a href="https://www.instagram.com/blacksheep_tejido_artesanal" target="_blank">
+                <i class="fab fa-instagram"></i> Sumate a nuestra comunidad
+            </a>
         </div>
-        <p style="margin-top: 25px;">&copy; 2026 Blacksheep Tejido Artesanal <br> Hecho con pasión en Villa Parque Santa Ana, Córdoba.</p>
+        <p class="footer-text">
+            &copy; 2026 Blacksheep Tejido Artesanal.<br>
+            Diseñado y tejido a mano en Salta, Argentina.
+        </p>
     </footer>
+
+    <a href="https://wa.me/5493876457769" class="wa-float" target="_blank" aria-label="Escríbenos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
         function reveal() {
